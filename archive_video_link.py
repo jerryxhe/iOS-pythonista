@@ -4,13 +4,11 @@
 __author__ = 'jerryxhe'
 
 import clipboard
-#from mysql import mysqlClient
-from psql import psqlClient
+from sql import psqlClient
 
 link = clipboard.get()
 
 print link
 
-#m = mysqlClient()
 m = psqlClient()
 m.execute("INSERT INTO eduvideo(source, created_on) VALUES ('%s', NOW())" % link)
